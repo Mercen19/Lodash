@@ -51,6 +51,13 @@ const _ = {
             }
         }
         return undefined;
+    },
+    drop (array, n) {
+        if (n === undefined) {
+            n = 1;
+        }
+        const droppedArray = array.slice(n);
+        return droppedArray;
     }
 };
 
