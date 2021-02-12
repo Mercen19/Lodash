@@ -63,11 +63,19 @@ const _ = {
         const dropNumber = array.findIndex((element, index) => !predicate(element, index, array));
         const droppedArray = this.drop(array, dropNumber);
         return droppedArray;
+    },
+    chunk (array, size) {
+        if (size === undefined) {
+            size = 1;
+        }
+        const arrayChunks = [];
+        for (let i = 0; i < array.length; i += size) {
+            const arrayChunk = array.slice(i, i + size);
+            arrayChunks.push(arrayChunk);
+        }
+        return arrayChunks;
     }
 };
-
-
-
 
 // Do not write or modify code below this line.
 module.exports = _;
